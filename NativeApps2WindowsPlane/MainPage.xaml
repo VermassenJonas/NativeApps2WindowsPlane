@@ -8,7 +8,43 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <NavigationView
+        x:Name="navView"
+        IsBackButtonVisible="Collapsed"
+        IsSettingsVisible="False"
+        SelectionChanged="NavView_SelectionChanged">
+        <NavigationView.MenuItems>
+            <NavigationViewItem
+                Content="Flight info"
+                Icon="World"
+                Tag="flightinfo" />
+            <NavigationViewItem Content="Order food" Tag="orderfood">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xED56;" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
 
-    </Grid>
+            <NavigationViewItem Content="ShoppingCart" Tag="shoppingcart">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE7BF;" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="My orders" Tag="myorders">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xF0E3;" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Chatroom" Tag="chatroom">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE8F2;" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Music and Movies" Tag="movies">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xEA69;" />
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+        <Frame x:Name="mainFrame" />
+    </NavigationView>
 </Page>
