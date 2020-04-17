@@ -29,7 +29,7 @@ namespace NativeApps2WindowsPlane.ViewModels
         {
 
             HttpClient client = new HttpClient();
-            var json = await client.GetStringAsync(new Uri("http://localhost:51786/api/messages/"));
+            var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/"));
         }
     }
 }

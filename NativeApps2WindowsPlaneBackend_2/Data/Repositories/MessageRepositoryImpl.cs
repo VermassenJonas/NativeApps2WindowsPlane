@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using NativeApps2WindowsPlaneBackend_2.Models.Domain;
+
+namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
+{
+    public class MessageRepositoryImpl : MessageRepository
+    {
+
+        private readonly AppDbContext _context;
+        private readonly DbSet<Message> _messages;
+
+
+        public MessageRepositoryImpl(AppDbContext dbContext)
+        {
+            _context = dbContext;
+            _messages = dbContext.Messages;
+        }
+
+        public void Add(Message message)
+        {
+            _messages.Add(message);
+        }
+
+        public void Delete(Message message)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Message> getAll()
+        {
+            return _messages.Include(m => m.Sender);
+        }
+
+        public Message GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
+
+        public void Update(Message message)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
