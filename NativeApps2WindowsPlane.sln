@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeApps2WindowsPlane", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeApps2WindowsPlaneBackend", "NativeApps2WindowsPlaneBackend\NativeApps2WindowsPlaneBackend.csproj", "{DC82B028-7653-4E70-9C0F-D7D728B004C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NativeApps2WindowsPlaneBackend_2", "NativeApps2WindowsPlaneBackend_2\NativeApps2WindowsPlaneBackend_2.csproj", "{F60EDC79-1952-4FEC-9E82-BC2564471180}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,7 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3EC7FC30-6394-4630-B9EE-4BB32FA73D8E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3EC7FC30-6394-4630-B9EE-4BB32FA73D8E}.Debug|Any CPU.Build.0 = Debug|x86
 		{3EC7FC30-6394-4630-B9EE-4BB32FA73D8E}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{3EC7FC30-6394-4630-B9EE-4BB32FA73D8E}.Debug|ARM.ActiveCfg = Debug|ARM
 		{3EC7FC30-6394-4630-B9EE-4BB32FA73D8E}.Debug|ARM.Build.0 = Debug|ARM
@@ -68,6 +71,26 @@ Global
 		{DC82B028-7653-4E70-9C0F-D7D728B004C7}.Release|x64.Build.0 = Release|Any CPU
 		{DC82B028-7653-4E70-9C0F-D7D728B004C7}.Release|x86.ActiveCfg = Release|Any CPU
 		{DC82B028-7653-4E70-9C0F-D7D728B004C7}.Release|x86.Build.0 = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|ARM.Build.0 = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|x64.Build.0 = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Debug|x86.Build.0 = Debug|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|ARM.Build.0 = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|ARM64.Build.0 = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|x64.ActiveCfg = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|x64.Build.0 = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|x86.ActiveCfg = Release|Any CPU
+		{F60EDC79-1952-4FEC-9E82-BC2564471180}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

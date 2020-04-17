@@ -7,13 +7,13 @@ namespace NativeApps2WindowsPlaneBackend.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202003140957049_InitialCreate"; }
+            get { return "202004170737326_Initial"; }
         }
         
         string IMigrationMetadata.Source

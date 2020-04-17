@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,13 @@ namespace NativeApps2WindowsPlane.ViewModels
                 Sender = "Jonas",
                 Sent = DateTime.Now
             });
+            loadDataAsync();
+        }
+        private async void loadDataAsync()
+        {
+
+            HttpClient client = new HttpClient();
+            var json = await client.GetStringAsync(new Uri("http://localhost:51786/api/messages/"));
         }
     }
 }

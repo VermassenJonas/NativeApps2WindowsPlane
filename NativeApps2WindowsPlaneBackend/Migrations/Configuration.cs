@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "NativeApps2WindowsPlaneBackend.Models.NativeApps2WindowsPlaneBackendContext";
         }
 
         protected override void Seed(NativeApps2WindowsPlaneBackend.Models.NativeApps2WindowsPlaneBackendContext context)

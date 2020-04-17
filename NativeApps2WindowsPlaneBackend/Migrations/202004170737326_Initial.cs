@@ -3,10 +3,21 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Articles",
+                c => new
+                    {
+                        ArticleId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Stock = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ArticleId);
+            
             CreateTable(
                 "dbo.Flights",
                 c => new
@@ -177,6 +188,7 @@
             DropTable("dbo.OrderLines");
             DropTable("dbo.Orders");
             DropTable("dbo.Flights");
+            DropTable("dbo.Articles");
         }
     }
 }
