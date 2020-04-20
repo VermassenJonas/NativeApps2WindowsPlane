@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NativeApps2WindowsPlane.Models
+namespace NativeApps2WindowsPlane.Models.Domain
 {
     public class Message
     {
+        public int MessageId { get; set; }
         public String Content { get; set; }
         public DateTime Sent { get; set; }
-        public String Sender { get; set; }
-        public String Alignment { get; set; }
+        public Dictionary<string, Object> Sender { get; set; } //TODO: fix to Passenger
     }
 }

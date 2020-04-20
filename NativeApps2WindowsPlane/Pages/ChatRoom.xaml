@@ -5,7 +5,7 @@
     xmlns:local="using:NativeApps2WindowsPlane.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:models="using:NativeApps2WindowsPlane.Models"
+    xmlns:vos="using:NativeApps2WindowsPlane.Models.Vos"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -21,7 +21,7 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate >
-                <DataTemplate  x:DataType="models:Message">
+                <DataTemplate  x:DataType="vos:MessageVo">
                     <Grid Height="Auto" Margin="4" HorizontalAlignment="{x:Bind Alignment}">
                         <StackPanel MinHeight="75" Width="350" Padding="10, 0, 0, 10" CornerRadius="4">
                             <TextBlock Text="{x:Bind Content}" Padding="0, 10, 0, 0" FontSize="20"/>

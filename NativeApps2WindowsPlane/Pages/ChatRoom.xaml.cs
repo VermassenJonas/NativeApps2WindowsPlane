@@ -1,4 +1,5 @@
 ﻿using NativeApps2WindowsPlane.Models;
+using NativeApps2WindowsPlane.Models.Vos;
 using NativeApps2WindowsPlane.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -34,14 +35,14 @@ namespace NativeApps2WindowsPlane.Pages
 
         public void AddMessage()
         {
-            Message message = new Message()
+            MessageVo message = new MessageVo()
             {
                 Alignment = "Left",
                 Content = MessageInput.Text,
                 Sender = "Jonas",
                 Sent = DateTime.Now
             };
-            Messages.MessageList.Add(message);
+            Messages.AddMessage(MessageInput.Text);
         }
     }
 }
