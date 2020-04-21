@@ -10,6 +10,6 @@ namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
     {
         public int NotificationId { get; set; }
         public String Content { get; set; }
-        public List<Passenger> Recipients { get; set; }
+        public List<PassengerNotification> Recipients { get; set; }
     }
 }

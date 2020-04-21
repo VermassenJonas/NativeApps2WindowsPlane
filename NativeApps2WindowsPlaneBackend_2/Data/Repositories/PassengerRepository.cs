@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
 {
-    public interface MessageRepository
+    public interface PassengerRepository
     {
-        Message GetById(int id);
-        IEnumerable<Message> getAll();
-        void Add(Message message);
-        void Delete(Message message);
-        void Update(Message message);
+        Passenger GetById(int id);
+        IEnumerable<Passenger> getAll();
+        void Add(Passenger passenger);
+        void Delete(Passenger passenger);
+        void Update(Passenger passenger);
         void SaveChanges();
     }
 }

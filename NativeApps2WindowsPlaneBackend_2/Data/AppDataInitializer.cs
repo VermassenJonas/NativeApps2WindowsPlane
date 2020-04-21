@@ -20,14 +20,22 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
             _dbContext.Database.EnsureDeleted();
             if (_dbContext.Database.EnsureCreated())
             {
+                Passenger p1 = new Passenger()
+                {
+                    FirstName = "Jonas",
+                    Name = "Vermassen",
+                    Seat = "A6",
+                    TicketNumber = 1234
+                };
                 _dbContext.Messages.Add(new Message()
                 {
                     Content = "test from backend",
                     MessageId =1,
-                    Sender =  null,
+                    Sender =  p1,
                     Sent = DateTime.Now
                     
                 });
+                _dbContext.Passengers.Add(p1);
                 _dbContext.SaveChanges();
 
             }

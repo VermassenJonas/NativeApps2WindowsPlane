@@ -35,6 +35,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
             modelBuilder.ApplyConfiguration(new MediumConfig());
             modelBuilder.ApplyConfiguration(new MessageConfig());
             modelBuilder.ApplyConfiguration(new NotificationConfig());
+            modelBuilder.ApplyConfiguration(new PassengerNotificationConfig());
             modelBuilder.ApplyConfiguration(new OrderConfig());
             modelBuilder.ApplyConfiguration(new OrderLineConfig());
             modelBuilder.ApplyConfiguration(new PassengerConfig());

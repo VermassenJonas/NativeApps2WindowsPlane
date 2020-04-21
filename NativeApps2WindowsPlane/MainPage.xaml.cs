@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NativeApps2WindowsPlane.Pages;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +26,8 @@ namespace NativeApps2WindowsPlane
         public MainPage()
         {
             this.InitializeComponent();
+
+            new LoginDialog().ShowAsync();
         }
         private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {

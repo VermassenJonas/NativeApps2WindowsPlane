@@ -129,7 +129,11 @@
     <Compile Include="Pages\ChatRoom.xaml.cs">
       <DependentUpon>ChatRoom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LoginDialog.xaml.cs">
+      <DependentUpon>LoginDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BackendCommService.cs" />
     <Compile Include="ViewModels\MessageVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +162,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\ChatRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LoginDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
