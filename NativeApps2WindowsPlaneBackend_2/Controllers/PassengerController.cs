@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NativeApps2WindowsPlaneBackend_2.Data.Repositories;
 using NativeApps2WindowsPlaneBackend_2.Models.Domain;
 
 namespace NativeApps2WindowsPlaneBackend_2.Controllers
@@ -12,38 +13,23 @@ namespace NativeApps2WindowsPlaneBackend_2.Controllers
     [ApiController]
     public class PassengerController : ControllerBase
     {
-        private readonly PassengerRepository _passengerRepository;
 
-        // GET: api/Passenger
-        [HttpGet]
-        public IEnumerable<Passenger> Get()
+        private readonly PassengerRepository _passengerRepository;
+        public PassengerController(PassengerRepository passengerRepository)
         {
-            return new string[] { "value1", "value2" };
+            _passengerRepository = passengerRepository;
         }
+
+        
+        
 
         // GET: api/Passenger/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Passenger Get(int id)
         {
-            return "value";
+            return _passengerRepository.GetById(id);
         }
 
-        // POST: api/Passenger
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/Passenger/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+       
     }
 }

@@ -33,6 +33,7 @@ namespace NativeApps2WindowsPlaneBackend_2
               options.UseMySQL(Configuration.GetConnectionString("AppContext")));
             services.AddScoped<AppDataInitializer>();
             services.AddScoped<MessageRepository, MessageRepositoryImpl>();
+            services.AddScoped<PassengerRepository, PassengerRepositoryImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

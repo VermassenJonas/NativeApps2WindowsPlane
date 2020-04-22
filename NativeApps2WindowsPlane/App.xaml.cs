@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using SimpleInjector;
+using NativeApps2WindowsPlane.Services;
 
 namespace NativeApps2WindowsPlane
 {
@@ -22,6 +24,8 @@ namespace NativeApps2WindowsPlane
     /// </summary>
     sealed partial class App : Application
     {
+
+        static readonly Container container = new Container();
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +34,9 @@ namespace NativeApps2WindowsPlane
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            container.Register<BackendCommService>(Lifestyle.Singleton);
+            container.Verify();
         }
 
         /// <summary>

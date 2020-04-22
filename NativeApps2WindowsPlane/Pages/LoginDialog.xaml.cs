@@ -26,7 +26,7 @@ namespace NativeApps2WindowsPlane.Pages
 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
-            throw new NotImplementedException();
+            //TODO   
         }
 
         

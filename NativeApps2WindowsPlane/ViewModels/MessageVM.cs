@@ -2,6 +2,7 @@
 using NativeApps2WindowsPlane.Models.Domain;
 using NativeApps2WindowsPlane.Models.Vos;
 using NativeApps2WindowsPlane.Models.Vos.Mappers;
+using NativeApps2WindowsPlane.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace NativeApps2WindowsPlane.ViewModels
     public class MessageVM
     {
         public ObservableCollection<MessageVo> MessageList { get; set; }
+
+        private readonly BackendCommService bcs;
 
         public MessageVM()
         {
