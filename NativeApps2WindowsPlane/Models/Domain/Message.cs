@@ -11,6 +11,6 @@ namespace NativeApps2WindowsPlane.Models.Domain
         public int MessageId { get; set; }
         public String Content { get; set; }
         public DateTime Sent { get; set; }
-        public Dictionary<string, Object> Sender { get; set; } //TODO: fix to Passenger
+        public Passenger Sender { get; set; } //TODO: fix to Passenger
     }
 }

@@ -1,7 +1,11 @@
-﻿using System;
+﻿using NativeApps2WindowsPlane.Models.Domain;
+using NativeApps2WindowsPlane.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -24,9 +28,20 @@ namespace NativeApps2WindowsPlane.Pages
             this.InitializeComponent();
         }
 
-        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        private async  void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
         {
-            //TODO   
+            try
+            {
+                HttpClient client = new HttpClient();      
+                var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/passenger/" + LoginInput.Text));
+
+                Passenger user = JsonConvert.DeserializeObject<Passenger>(json);
+                App.container.GetInstance<PassengerIdentificationService>().SetCurrentUser(user);
+            }catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+           
         }
 
         

@@ -14,14 +14,14 @@ namespace NativeApps2WindowsPlane.Models.Vos.Mappers
             throw new NotImplementedException(); //TODO: check if needed
         }
 
-        public MessageVo MapToVo(Message o)
+        public MessageVo MapToVo(Message message)
         {
             return new MessageVo()
             {
-                Sender = "Backend",//o.Sender["FirstName"].ToString(),
-                Sent = o.Sent,
+                Sender = (message.Sender ?? new Passenger() { FirstName = "unknown"}).FirstName,
+                Sent = message.Sent,
                 Alignment = "Right",
-                Content = o.Content
+                Content = message.Content
             };
         }
     }

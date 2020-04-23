@@ -18,16 +18,18 @@ namespace NativeApps2WindowsPlane.ViewModels
     {
         public ObservableCollection<MessageVo> MessageList { get; set; }
 
-        private readonly BackendCommService bcs;
+        private readonly PassengerIdentificationService passengerIdentificationService;
 
-        public MessageVM()
+        public MessageVM(PassengerIdentificationService passengerIdentificationService)
         {
+
+            this.passengerIdentificationService = passengerIdentificationService;
             this.MessageList = new ObservableCollection<MessageVo>();
             MessageList.Add(new MessageVo()
             {
                 Alignment = "Right",
                 Content = "Test",
-                Sender = "Jonas",
+                Sender = "TestingFrontend",
                 Sent = DateTime.Now
             });
             loadDataAsync();
@@ -64,7 +66,7 @@ namespace NativeApps2WindowsPlane.ViewModels
             {
                 Content = content,
                 Sent = DateTime.Now,
-                Sender = null
+                Sender = passengerIdentificationService.getCurrentUser()
             };
 
             try

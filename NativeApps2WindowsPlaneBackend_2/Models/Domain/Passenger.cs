@@ -15,5 +15,6 @@ namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
         public List<Order> Orders { get; set; }
         public List<PassengerNotification> Notifications { get; set; }
         public TravelGroup TravelGroup { get; set; }
+        public List<Message> Messages { get; set; }
     }
 }

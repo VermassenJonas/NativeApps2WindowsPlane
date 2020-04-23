@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NativeApps2WindowsPlaneBackend_2.Data;
 using NativeApps2WindowsPlaneBackend_2.Data.Repositories;
+using Newtonsoft.Json;
 
 namespace NativeApps2WindowsPlaneBackend_2
 {
@@ -27,7 +28,9 @@ namespace NativeApps2WindowsPlaneBackend_2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(options => {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
 
             services.AddDbContext<AppDbContext>(options =>
               options.UseMySQL(Configuration.GetConnectionString("AppContext")));

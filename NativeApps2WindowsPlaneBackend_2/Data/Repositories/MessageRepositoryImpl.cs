@@ -27,27 +27,21 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
 
         public void Delete(Message message)
         {
-            throw new NotImplementedException();
+            _messages.Remove(message);
         }
 
         public IEnumerable<Message> getAll()
         {
-            return _messages.Include(m => m.Sender);
+            return _messages.Include(m => m.Sender).ToList();
         }
 
-        public Message GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public void SaveChanges()
         {
             _context.SaveChanges();
         }
 
-        public void Update(Message message)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

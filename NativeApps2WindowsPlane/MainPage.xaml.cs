@@ -38,7 +38,7 @@ namespace NativeApps2WindowsPlane
                     //mainFrame.Navigate(typeof(Pages.FlightInfo));
                     break;
                 case "orderfood":
-                    //mainFrame.Navigate(typeof(Pages.OrderFood));
+                    mainFrame.Navigate(typeof(Pages.ShopOverview));
                     break;
                 case "myorders":
                     // mainFrame.Navigate(typeof(Pages.MyOrders));
