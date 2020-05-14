@@ -5,10 +5,21 @@
     xmlns:local="using:NativeApps2WindowsPlane.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:domain="using:NativeApps2WindowsPlane.Models.Domain"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+    <GridView
+        ItemsSource="{Binding ProductList}">
+        <GridView.ItemTemplate>
+            <DataTemplate 
+                x:DataType="domain:Product">
+                    <Button Tag="{x:Bind ArticleId}" Click="GoToProduct">
+                        <TextBlock Text="{x:Bind Name}" Padding="50,50,50,50" FontSize="20"/>
+                    </Button>
+                </DataTemplate>
+        </GridView.ItemTemplate>
+    </GridView>
     </Grid>
 </Page>

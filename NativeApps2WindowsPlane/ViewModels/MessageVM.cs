@@ -25,13 +25,7 @@ namespace NativeApps2WindowsPlane.ViewModels
 
             this.passengerIdentificationService = passengerIdentificationService;
             this.MessageList = new ObservableCollection<MessageVo>();
-            MessageList.Add(new MessageVo()
-            {
-                Alignment = "Right",
-                Content = "Test",
-                Sender = "TestingFrontend",
-                Sent = DateTime.Now
-            });
+
             loadDataAsync();
 
         }
@@ -39,25 +33,21 @@ namespace NativeApps2WindowsPlane.ViewModels
         {
 
             HttpClient client = new HttpClient();
-            do
+
+            try //TODO: fetch
             {
-                try
+                var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/"));
+                MessageVoMapper mapper = new MessageVoMapper();
+                IEnumerable<MessageVo> list = JsonConvert.DeserializeObject<List<Message>>(json).Select(m => mapper.MapToVo(m));
+                foreach (MessageVo message in list)
                 {
-                    var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/"));
-                    MessageVoMapper mapper = new MessageVoMapper();
-                    IEnumerable<MessageVo> list = JsonConvert.DeserializeObject<List<Message>>(json).Select(m => mapper.MapToVo(m));
-                    foreach (MessageVo message in list)
-                    {
-                        MessageList.Add(message);
-                    }
+                    MessageList.Add(message);
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                await Task.Delay(TimeSpan.FromSeconds(5));
-            } while (false); //TODO: FIX AND MAKE BETTER
-            
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public async void AddMessage(string content)

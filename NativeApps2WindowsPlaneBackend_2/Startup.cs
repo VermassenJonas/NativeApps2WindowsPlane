@@ -37,6 +37,7 @@ namespace NativeApps2WindowsPlaneBackend_2
             services.AddScoped<AppDataInitializer>();
             services.AddScoped<MessageRepository, MessageRepositoryImpl>();
             services.AddScoped<PassengerRepository, PassengerRepositoryImpl>();
+            services.AddScoped<ArticleRepository, ArticleRepositoryImpl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -37,7 +37,9 @@ namespace NativeApps2WindowsPlane
             this.Suspending += OnSuspending;
 
             container.Register<PassengerIdentificationService>(Lifestyle.Singleton);
+            container.Register<SelectedProductService>(Lifestyle.Singleton);
             container.Register<MessageVM>();
+            container.Register<ProductVM>();
             container.Verify();
         }
 
