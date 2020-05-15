@@ -15,7 +15,7 @@
         <GridView.ItemTemplate>
             <DataTemplate 
                 x:DataType="domain:Product">
-                    <Button Tag="{x:Bind ArticleId}" Click="GoToProduct">
+                    <Button Tag="{x:Bind ProductId}" Click="GoToProduct">
                         <TextBlock Text="{x:Bind Name}" Padding="50,50,50,50" FontSize="20"/>
                     </Button>
                 </DataTemplate>

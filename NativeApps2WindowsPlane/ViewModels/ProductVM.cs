@@ -29,7 +29,7 @@ namespace NativeApps2WindowsPlane.ViewModels
             
                 try
                 {
-                    var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/article/"));
+                    var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/product/"));
                     IEnumerable<Product> list = JsonConvert.DeserializeObject<List<Product>>(json);
                     foreach (Product product in list)
                     {

@@ -10,7 +10,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Article>       Articles { get; set; }
+        public DbSet<Product>       Products { get; set; }
         public DbSet<Flight>        Flights { get; set; }
         public DbSet<Medium>        Media { get; set; }
         public DbSet<Message>       Messages { get; set; }
@@ -30,7 +30,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new ArticleConfig());
+            modelBuilder.ApplyConfiguration(new ProductConfig());
             modelBuilder.ApplyConfiguration(new FlightConfig());
             modelBuilder.ApplyConfiguration(new MediumConfig());
             modelBuilder.ApplyConfiguration(new MessageConfig());

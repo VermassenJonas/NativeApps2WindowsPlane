@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
 {
-    public interface ArticleRepository
+    public interface ProductRepository
     {
-        IEnumerable<Article> GetAll();
+        IEnumerable<Product> GetAll();
 
     }
 }

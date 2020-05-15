@@ -50,7 +50,7 @@ namespace NativeApps2WindowsPlane
                     // mainFrame.Navigate(typeof(Pages.Movies));
                     break;
                 case "shoppingcart":
-                    // mainFrame.Navigate(typeof(View.ShoppingCartPage));
+                    mainFrame.Navigate(typeof(Pages.ShoppingCart));
                     break;
             }
         }

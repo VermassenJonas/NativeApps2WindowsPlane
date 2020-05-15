@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
+namespace NativeApps2WindowsPlane.Models.Domain
 {
     public class OrderLine
     {
         public int OrderLineId { get; set; }
-        public Product  Product{ get; set; }
+        public Product Product { get; set; }
         public int Amount { get; set; }
     }
 }

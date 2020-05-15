@@ -11,20 +11,20 @@ namespace NativeApps2WindowsPlaneBackend_2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ArticleController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly ArticleRepository _articleRepository;
+        private readonly ProductRepository _productRepository;
 
-        public ArticleController( ArticleRepository articleRepository)
+        public ProductController( ProductRepository productRepository)
         {
-            _articleRepository = articleRepository;
+            _productRepository = productRepository;
         }
 
         // GET api/message
         [HttpGet]
-        public IEnumerable<Article> Get()
+        public IEnumerable<Product> Get()
         {
-            return _articleRepository.GetAll();
+            return _productRepository.GetAll();
         }
     }
 }

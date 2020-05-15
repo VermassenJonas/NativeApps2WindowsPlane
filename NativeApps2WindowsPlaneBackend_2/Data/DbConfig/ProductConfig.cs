@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace NativeApps2WindowsPlaneBackend_2.Data.DbConfig
 {
-    public class ArticleConfig : IEntityTypeConfiguration<Article>
+    public class ProductConfig : IEntityTypeConfiguration<Product>
     {
-        public void Configure(EntityTypeBuilder<Article> builder)
+        public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.ToTable("Article");
+            builder.ToTable("Product");
         }
     }
 }

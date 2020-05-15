@@ -7,21 +7,21 @@ using NativeApps2WindowsPlaneBackend_2.Models.Domain;
 
 namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
 {
-    public class ArticleRepositoryImpl : ArticleRepository
+    public class ProductRepositoryImpl : ProductRepository
     {
         private readonly AppDbContext _context;
-        private readonly DbSet<Article> _articles;
+        private readonly DbSet<Product> _products;
 
 
-        public ArticleRepositoryImpl(AppDbContext dbContext)
+        public ProductRepositoryImpl(AppDbContext dbContext)
         {
             _context = dbContext;
-            _articles = dbContext.Articles;
+            _products = dbContext.Products;
         }
 
-        public IEnumerable<Article> GetAll()
+        public IEnumerable<Product> GetAll()
         {
-            return _articles.ToList();
+            return _products.ToList();
         }
     }
 }

@@ -42,48 +42,48 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                     Sent = DateTime.Now
 
                 };
-                Article a1 = new Article()
+                Product a1 = new Product()
                 {
                     Name = "Wodka",
                     Price = 15.00m,
                     Stock = 15
                 };
-                Article a2 = new Article()
+                Product a2 = new Product()
                 {
                     Name = "Peanuts",
                     Price = 2.50m,
                     Stock = 60
                 };
-                Article a3 = new Article()
+                Product a3 = new Product()
                 {
                     Name = "Whiskey",
                     Price = 20.00m,
                     Stock = 12
                 };
-                Article a4 = new Article()
+                Product a4 = new Product()
                 {
                     Name = "Chips",
                     Price = 2.50m,
                     Stock = 80
                 };
-                Article a5 = new Article()
+                Product a5 = new Product()
                 {
                     Name = "Pizza",
                     Price = 12.00m,
                     Stock = 40
                 };
-                Article a6 = new Article()
+                Product a6 = new Product()
                 {
                     Name = "Crystal Meth",
                     Price = 100.00m,
                     Stock = 20
                 };
-                _dbContext.Articles.Add(a1);
-                _dbContext.Articles.Add(a2);
-                _dbContext.Articles.Add(a3);
-                _dbContext.Articles.Add(a4);
-                _dbContext.Articles.Add(a5);
-                _dbContext.Articles.Add(a6);
+                _dbContext.Products.Add(a1);
+                _dbContext.Products.Add(a2);
+                _dbContext.Products.Add(a3);
+                _dbContext.Products.Add(a4);
+                _dbContext.Products.Add(a5);
+                _dbContext.Products.Add(a6);
                                        
                 _dbContext.Messages.Add(m1);
                 _dbContext.Passengers.Add(p1);

@@ -32,11 +32,13 @@ namespace NativeApps2WindowsPlane.Pages
             this.DataContext = Products;
             this.InitializeComponent();
         }
+
+
         private void GoToProduct(object sender, RoutedEventArgs e)
         {
             if (sender is Button b)
             {
-                Product selectedProduct = Products.ProductList.SingleOrDefault(p => string.Equals(p.ArticleId, b.Tag.ToString()));
+                Product selectedProduct = Products.ProductList.SingleOrDefault(p => string.Equals(p.ProductId, b.Tag.ToString()));
                 SelectedProductService selectedProductService = App.container.GetInstance<SelectedProductService>();
                 selectedProductService.SetCurrentProduct(selectedProduct);
                 Frame.Navigate(typeof(Pages.ProductOverview));

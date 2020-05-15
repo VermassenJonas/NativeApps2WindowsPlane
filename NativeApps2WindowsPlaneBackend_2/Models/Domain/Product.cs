@@ -5,9 +5,9 @@ using System.Web;
 
 namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
 {
-    public class Article
+    public class Product
     {
-        public int ArticleId { get; set; }
+        public int ProductId { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }

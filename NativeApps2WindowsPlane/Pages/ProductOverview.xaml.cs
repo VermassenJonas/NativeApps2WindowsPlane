@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NativeApps2WindowsPlane.Models.Domain;
+using NativeApps2WindowsPlane.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,31 @@ namespace NativeApps2WindowsPlane.Pages
     /// </summary>
     public sealed partial class ProductOverview : Page
     {
+        public OrderLine orderLine { get; set; }
+
         public ProductOverview()
         {
+            Product selectedProduct = App.container.GetInstance<SelectedProductService>().getCurrentProduct();
+            orderLine = new OrderLine()
+            {
+                Product = selectedProduct,
+                Amount = 1
+            };
+            this.DataContext = this;
             this.InitializeComponent();
+        }
+        public void AddOrderLineToCart()
+        {
+            App.container.GetInstance<ShoppingCartService>().getCurrentOrder().OrderLines.Add(orderLine);
+            Frame.Navigate(typeof(Pages.ShopOverview));
+        }
+        public void AddItem()
+        {
+            orderLine.Amount = orderLine.Amount + 1;
+        }
+        public void RemoveItem()
+        {
+            orderLine.Amount = orderLine.Amount - 1;
         }
     }
 }
