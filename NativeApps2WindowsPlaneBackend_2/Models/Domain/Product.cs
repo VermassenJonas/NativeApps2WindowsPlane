@@ -11,5 +11,17 @@ namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var product = obj as Product;
+            return product != null &&
+                   ProductId == product.ProductId;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ProductId);
+        }
     }
 }

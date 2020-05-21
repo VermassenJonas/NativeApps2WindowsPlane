@@ -19,8 +19,8 @@
                     <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE70D;"/>
                 </Button>
             </StackPanel>
-            <TextBlock FontSize="32" Text="{x:Bind orderLine.Amount}"></TextBlock> 
-            <Button  FontSize="32">Add to cart</Button>
+            <TextBlock FontSize="32" Text="{x:Bind orderLine.Amount}"></TextBlock>
+            <Button  FontSize="32" Click="{x:Bind AddOrderLineToCart}">Add to cart</Button>
         </StackPanel>
     </Border>
 </Page>

@@ -1,7 +1,11 @@
-﻿using System;
+﻿using NativeApps2WindowsPlane.Models.Domain;
+using NativeApps2WindowsPlane.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -22,9 +26,35 @@ namespace NativeApps2WindowsPlane.Pages
     /// </summary>
     public sealed partial class ShoppingCart : Page
     {
+        private Order order = App.container.GetInstance<ShoppingCartService>().getCurrentOrder();
         public ShoppingCart()
         {
             this.InitializeComponent();
+            this.DataContext = order;
+        }
+        public void RemoveLine(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button b)
+            {
+                order.OrderLines.RemoveAll(ol => string.Equals(ol.OrderLineId.ToString(), b.Tag.ToString()));
+                Frame.Navigate(typeof(Pages.ShoppingCart));
+            }
+        }
+        public async void CommitOrder(object sender, RoutedEventArgs rea)
+        {
+            try
+            {
+
+
+                HttpClient client = new HttpClient();
+                await client.PostAsync("http://localhost:51163/api/order/", new StringContent(JsonConvert.SerializeObject(order), System.Text.Encoding.UTF8, "application/json"));
+                App.container.GetInstance<ShoppingCartService>().SetCurrentOrder(new Order());
+                Frame.Navigate(typeof(Pages.ShopOverview));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

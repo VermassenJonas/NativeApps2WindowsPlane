@@ -10,5 +10,13 @@ namespace NativeApps2WindowsPlane.Models.Domain
     {
         public int OrderId { get; set; }
         public List<OrderLine> OrderLines { get; set; }
+        public decimal TotalPrice
+        {
+            get
+            {
+                return OrderLines.Sum(ol => ol.TotalPrice);
+            }
+
+        }
     }
 }

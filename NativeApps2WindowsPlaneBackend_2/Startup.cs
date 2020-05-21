@@ -38,6 +38,8 @@ namespace NativeApps2WindowsPlaneBackend_2
             services.AddScoped<MessageRepository, MessageRepositoryImpl>();
             services.AddScoped<PassengerRepository, PassengerRepositoryImpl>();
             services.AddScoped<ProductRepository, ProductRepositoryImpl>();
+            services.AddScoped<OrderRepository, OrderRepositoryImpl>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

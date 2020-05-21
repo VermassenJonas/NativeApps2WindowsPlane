@@ -5,10 +5,56 @@
     xmlns:local="using:NativeApps2WindowsPlane.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <StackPanel
+        Orientation="Vertical">
+        <controls:DataGrid 
+        x:Name="DataGrid_products"
+        ItemsSource="{Binding OrderLines}"
+        AutoGenerateColumns="False">
+            <controls:DataGrid.Columns>
+                
+                <controls:DataGridTextColumn 
+                    Header="Product" 
+                    Width="SizeToCells"
+                    Binding="{Binding Product.Name}" 
+                    FontSize="20" />
+                <controls:DataGridTextColumn
+                    Header="Amount" 
+                    Width="SizeToHeader"
+                    Binding="{Binding Amount}" 
+                    FontSize="20" />
+                <controls:DataGridTextColumn 
+                    Header="Unit Price (€)" 
+                    Width="SizeToHeader"
+                    Binding="{Binding Product.Price}" 
+                    FontSize="20" />
+                <controls:DataGridTextColumn 
+                    Header="Total Price (€)" 
+                    Width="SizeToHeader"
+                    Binding="{Binding TotalPrice}" 
+                    FontSize="20" />
+                <controls:DataGridTemplateColumn 
+                    Header="Remove" 
+                    Width="SizeToCells">
+                    <controls:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Tag="{Binding OrderLineId}" Click="RemoveLine"> Remove Product</Button>
+                        </DataTemplate>
+                    </controls:DataGridTemplateColumn.CellTemplate>
 
-    </Grid>
+                </controls:DataGridTemplateColumn>
+
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Totale prijs: "></TextBlock>
+            <TextBlock Text="{Binding TotalPrice}"></TextBlock>
+            <Button  Click="CommitOrder">Commit Order</Button>
+        </StackPanel>
+    </StackPanel>
+
 </Page>

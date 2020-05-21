@@ -9,7 +9,11 @@ namespace NativeApps2WindowsPlane.Services
 {
     public class ShoppingCartService
     {
-        private Order order = new Order();
+        private int orderLineIdCounter = 0;
+        private Order order = new Order()
+        {
+            OrderLines = new List<OrderLine>()
+        };
         public void SetCurrentOrder(Order order)
         {
             this.order = order;
@@ -17,6 +21,10 @@ namespace NativeApps2WindowsPlane.Services
         public Order getCurrentOrder()
         {
             return order;
+        }
+        public int getNewOrderLineId()
+        {
+            return ++orderLineIdCounter;
         }
     }
 }
