@@ -9,5 +9,6 @@ namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
     {
         public int OrderId { get; set; }
         public List<OrderLine> OrderLines { get; set; }
+        public Passenger Passenger { get; set; }
     }
 }

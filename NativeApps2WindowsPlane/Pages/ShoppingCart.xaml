@@ -42,7 +42,7 @@
                     Width="SizeToCells">
                     <controls:DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Tag="{Binding OrderLineId}" Click="RemoveLine"> Remove Product</Button>
+                            <Button Tag="{Binding LineId}" Click="RemoveLine"> Remove Product</Button>
                         </DataTemplate>
                     </controls:DataGridTemplateColumn.CellTemplate>
 

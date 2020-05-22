@@ -27,6 +27,7 @@ namespace NativeApps2WindowsPlane.Pages
     public sealed partial class ShoppingCart : Page
     {
         private Order order = App.container.GetInstance<ShoppingCartService>().getCurrentOrder();
+        private readonly PassengerIdentificationService passengerIdentificationService = App.container.GetInstance<PassengerIdentificationService>(); 
         public ShoppingCart()
         {
             this.InitializeComponent();
@@ -36,7 +37,7 @@ namespace NativeApps2WindowsPlane.Pages
         {
             if (sender is Button b)
             {
-                order.OrderLines.RemoveAll(ol => string.Equals(ol.OrderLineId.ToString(), b.Tag.ToString()));
+                order.OrderLines.RemoveAll(ol => string.Equals(ol.LineId.ToString(), b.Tag.ToString()));
                 Frame.Navigate(typeof(Pages.ShoppingCart));
             }
         }
@@ -47,8 +48,9 @@ namespace NativeApps2WindowsPlane.Pages
 
 
                 HttpClient client = new HttpClient();
+                order.Passenger = passengerIdentificationService.getCurrentUser();
                 await client.PostAsync("http://localhost:51163/api/order/", new StringContent(JsonConvert.SerializeObject(order), System.Text.Encoding.UTF8, "application/json"));
-                App.container.GetInstance<ShoppingCartService>().SetCurrentOrder(new Order());
+                App.container.GetInstance<ShoppingCartService>().ResetCurrentOrder();
                 Frame.Navigate(typeof(Pages.ShopOverview));
             }
             catch (Exception e)

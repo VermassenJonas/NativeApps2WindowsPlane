@@ -2,13 +2,60 @@
     x:Class="NativeApps2WindowsPlane.Pages.OrderOverview"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="using:System"
     xmlns:local="using:NativeApps2WindowsPlane.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:domain="using:NativeApps2WindowsPlane.Models.Domain"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <ListView  ItemsSource="{Binding OrderList}">
+            <ListView.ItemTemplate >
+                <DataTemplate  x:DataType="domain:Order">
+                    <controls:Expander HorizontalContentAlignment="Stretch">
+                        <controls:Expander.Header>
+                            <TextBlock Text="{x:Bind sys:String.Format('Order for € {0}', TotalPrice )}"></TextBlock>
+                        </controls:Expander.Header>
+                        <controls:DataGrid 
+                            x:Name="DataGrid_products"
+                            ItemsSource="{Binding OrderLines}"
+                            AutoGenerateColumns="False">
+                            <controls:DataGrid.Columns>
+
+                                <controls:DataGridTextColumn 
+                                    Header="Product" 
+                                    Width="SizeToCells"
+                                    Binding="{Binding Product.Name}" 
+                                    FontSize="20" />
+                                <controls:DataGridTextColumn
+                                    Header="Amount" 
+                                    Width="SizeToHeader"
+                                    Binding="{Binding Amount}" 
+                                    FontSize="20" />
+                                <controls:DataGridTextColumn 
+                                    Header="Unit Price (€)" 
+                                    Width="SizeToHeader"
+                                    Binding="{Binding Product.Price}" 
+                                    FontSize="20" />
+                                <controls:DataGridTextColumn 
+                                    Header="Total Price (€)" 
+                                    Width="SizeToHeader"
+                                    Binding="{Binding TotalPrice}" 
+                                    FontSize="20" />
+
+
+                            </controls:DataGrid.Columns>
+                        </controls:DataGrid>
+                    </controls:Expander>
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
 
     </Grid>
+
 </Page>

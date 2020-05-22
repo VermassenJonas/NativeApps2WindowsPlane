@@ -13,6 +13,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.DbConfig
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.ToTable("Order");
+            builder.HasOne(o => o.Passenger).WithMany(p => p.Orders);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace NativeApps2WindowsPlane.Pages
             Product selectedProduct = App.container.GetInstance<SelectedProductService>().getCurrentProduct();
             orderLine = new OrderLine()
             {
-                OrderLineId = App.container.GetInstance<ShoppingCartService>().getNewOrderLineId(),
+                LineId = App.container.GetInstance<ShoppingCartService>().getNewOrderLineId(),
                 Product = selectedProduct,
                 Amount = 1
             };

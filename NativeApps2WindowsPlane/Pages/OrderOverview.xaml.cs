@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NativeApps2WindowsPlane.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,8 +23,11 @@ namespace NativeApps2WindowsPlane.Pages
     /// </summary>
     public sealed partial class OrderOverview : Page
     {
+        public OrderVM Orders { get; set; }
         public OrderOverview()
         {
+            Orders = App.container.GetInstance<OrderVM>();
+            this.DataContext = Orders;
             this.InitializeComponent();
         }
     }

@@ -10,6 +10,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
     {
         void Add(Order order);
         void SaveChanges();
+        List<Order> getByPassengerId(int pid);
     }
 }
 

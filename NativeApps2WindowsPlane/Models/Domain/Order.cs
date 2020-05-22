@@ -10,6 +10,7 @@ namespace NativeApps2WindowsPlane.Models.Domain
     {
         public int OrderId { get; set; }
         public List<OrderLine> OrderLines { get; set; }
+        public Passenger Passenger { get; set; }
         public decimal TotalPrice
         {
             get

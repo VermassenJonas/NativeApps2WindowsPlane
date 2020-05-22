@@ -18,6 +18,13 @@ namespace NativeApps2WindowsPlane.Services
         {
             this.order = order;
         }
+        public void ResetCurrentOrder()
+        {
+            order = new Order()
+            {
+                OrderLines = new List<OrderLine>()
+            };
+        }
         public Order getCurrentOrder()
         {
             return order;

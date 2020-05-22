@@ -19,9 +19,15 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
         }
         public void Add(Order order)
         {
+            _context.Passengers.Attach(order.Passenger);
             foreach (OrderLine ol in order.OrderLines)
                 _context.Products.Attach(ol.Product);
             _orders.Add(order);
+        }
+
+        public List<Order> getByPassengerId(int pid)
+        {
+            return _orders.Include(o => o.OrderLines).ThenInclude(ol => ol.Product).Where(o => o.Passenger.TicketNumber == pid).ToList();
         }
 
         public void SaveChanges()
