@@ -1,5 +1,4 @@
 ﻿using NativeApps2WindowsPlane.Models;
-using NativeApps2WindowsPlane.Models.Vos;
 using NativeApps2WindowsPlane.ViewModels;
 using System;
 using System.Collections.Generic;

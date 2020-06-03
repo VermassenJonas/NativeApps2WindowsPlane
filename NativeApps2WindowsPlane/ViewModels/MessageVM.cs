@@ -1,7 +1,5 @@
 ﻿using NativeApps2WindowsPlane.Models;
 using NativeApps2WindowsPlane.Models.Domain;
-using NativeApps2WindowsPlane.Models.Vos;
-using NativeApps2WindowsPlane.Models.Vos.Mappers;
 using NativeApps2WindowsPlane.Services;
 using Newtonsoft.Json;
 using System;
@@ -16,7 +14,7 @@ namespace NativeApps2WindowsPlane.ViewModels
 {
     public class MessageVM
     {
-        public ObservableCollection<MessageVo> MessageList { get; set; }
+        public ObservableCollection<Message> MessageList { get; set; }
 
         private readonly PassengerIdentificationService passengerIdentificationService;
 
@@ -24,7 +22,7 @@ namespace NativeApps2WindowsPlane.ViewModels
         {
 
             this.passengerIdentificationService = passengerIdentificationService;
-            this.MessageList = new ObservableCollection<MessageVo>();
+            this.MessageList = new ObservableCollection<Message>();
 
             loadDataAsync();
 
@@ -37,9 +35,8 @@ namespace NativeApps2WindowsPlane.ViewModels
             try //TODO: fetch auto
             {
                 var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/"));
-                MessageVoMapper mapper = new MessageVoMapper();
-                IEnumerable<MessageVo> list = JsonConvert.DeserializeObject<List<Message>>(json).Select(m => mapper.MapToVo(m));
-                foreach (MessageVo message in list)
+                IEnumerable<Message> list = JsonConvert.DeserializeObject<List<Message>>(json);
+                foreach (Message message in list)
                 {
                     MessageList.Add(message);
                 }

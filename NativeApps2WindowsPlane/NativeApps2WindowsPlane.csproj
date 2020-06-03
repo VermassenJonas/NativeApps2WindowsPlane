@@ -128,9 +128,6 @@
     <Compile Include="Models\Domain\OrderLine.cs" />
     <Compile Include="Models\Domain\Passenger.cs" />
     <Compile Include="Models\Domain\Product.cs" />
-    <Compile Include="Models\Vos\Mappers\MessageVoMapper.cs" />
-    <Compile Include="Models\Vos\Mappers\VoMapper.cs" />
-    <Compile Include="Models\Vos\MessageVo.cs" />
     <Compile Include="Pages\ChatRoom.xaml.cs">
       <DependentUpon>ChatRoom.xaml</DependentUpon>
     </Compile>

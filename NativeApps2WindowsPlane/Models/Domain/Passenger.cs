@@ -13,7 +13,11 @@ namespace NativeApps2WindowsPlane.Models.Domain
         public String FirstName { get; set; }
         public String Name { get; set; }
         public String Seat { get; set; }
+        public string FullName { get
+            {
+                return $"{FirstName} {Name}";
+            }
+        }
 
-       
     }
 }

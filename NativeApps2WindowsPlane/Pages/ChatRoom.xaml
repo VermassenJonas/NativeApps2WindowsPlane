@@ -5,7 +5,7 @@
     xmlns:local="using:NativeApps2WindowsPlane.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vos="using:NativeApps2WindowsPlane.Models.Vos"
+    xmlns:domain="using:NativeApps2WindowsPlane.Models.Domain"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -21,17 +21,22 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate >
-                <DataTemplate  x:DataType="vos:MessageVo">
-                    <Grid Height="Auto" Margin="4" HorizontalAlignment="{x:Bind Alignment}">
-                        <StackPanel MinHeight="75" Width="350" Padding="10, 0, 0, 10" CornerRadius="4">
-                            <TextBlock Text="{x:Bind Content}" Padding="0, 10, 0, 0" FontSize="20"/>
-                            <TextBlock Text="{x:Bind Sender}" Padding="0, 0, 0, 10" FontSize="15" />
-                            <TextBlock Text="{x:Bind Sent}" Padding="0, 0, 0, 10" FontSize="15"/>
+                <DataTemplate  x:DataType="domain:Message">
+                    <Grid Height="Auto" Margin="4"  HorizontalAlignment="{Binding Alignment}">
+                        <StackPanel MinHeight="75"  Width="Auto" Padding="10, 0, 0, 10" CornerRadius="4"  HorizontalAlignment="{Binding Alignment}">
+                            <TextBlock Text="{x:Bind Content}" Padding="0, 10, 0, 0" FontSize="20" HorizontalAlignment="{Binding Alignment}"/>
+                            <TextBlock Text="{x:Bind Sender.FullName}" Padding="0, 0, 0, 10" FontSize="15" HorizontalAlignment="{Binding Alignment}"/>
+                            <TextBlock Text="{x:Bind Sent}" Padding="0, 0, 0, 10" FontSize="15" HorizontalAlignment="{Binding Alignment}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
 
             </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
         <TextBox x:Name="MessageInput" Grid.Row="1"></TextBox>
     </Grid>
