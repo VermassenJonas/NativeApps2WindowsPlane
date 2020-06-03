@@ -47,7 +47,7 @@ namespace NativeApps2WindowsPlane
                     mainFrame.Navigate(typeof(Pages.ChatRoom));
                     break;
                 case "movies":
-                    // mainFrame.Navigate(typeof(Pages.Movies));
+                    mainFrame.Navigate(typeof(Pages.MediaOverview));
                     break;
                 case "shoppingcart":
                     mainFrame.Navigate(typeof(Pages.ShoppingCart));

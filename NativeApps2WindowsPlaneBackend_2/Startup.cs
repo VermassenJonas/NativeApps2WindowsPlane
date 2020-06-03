@@ -39,6 +39,7 @@ namespace NativeApps2WindowsPlaneBackend_2
             services.AddScoped<PassengerRepository, PassengerRepositoryImpl>();
             services.AddScoped<ProductRepository, ProductRepositoryImpl>();
             services.AddScoped<OrderRepository, OrderRepositoryImpl>();
+            services.AddScoped<MediumRepository, MediumRepositoryImpl>();
 
         }
 

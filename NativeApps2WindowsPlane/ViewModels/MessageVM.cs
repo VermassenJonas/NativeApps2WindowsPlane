@@ -34,7 +34,7 @@ namespace NativeApps2WindowsPlane.ViewModels
 
             HttpClient client = new HttpClient();
 
-            try //TODO: fetch
+            try //TODO: fetch auto
             {
                 var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/"));
                 MessageVoMapper mapper = new MessageVoMapper();

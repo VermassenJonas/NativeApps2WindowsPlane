@@ -78,6 +78,27 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                     Price = 100.00m,
                     Stock = 20
                 };
+                Medium med1 = new Medium()
+                {
+                    Title = "The Fellowship of the Ring",
+                    FileLoc = "Hobbits.mp4",
+                    Tags = new List<string>(){"Fantasy", "Tolkien", "Adventure"},
+                    Type = "movie"
+                };
+                Medium med2 = new Medium()
+                {
+                    Title = "Star Wars",
+                    FileLoc = "Hobbits_2.mp4",
+                    Tags = new List<string>() { "Sci Fi", "Adventure" },
+                    Type = "movie"
+                };
+                Medium med3 = new Medium()
+                {
+                    Title = "Twilight Techno",
+                    FileLoc = "Twilight_Techno.mp3",
+                    Tags = new List<string>() { "Techno" },
+                    Type = "song"
+                };
                 _dbContext.Products.Add(a1);
                 _dbContext.Products.Add(a2);
                 _dbContext.Products.Add(a3);
@@ -86,8 +107,12 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                 _dbContext.Products.Add(a6);
                                        
                 _dbContext.Messages.Add(m1);
+
                 _dbContext.Passengers.Add(p1);
                 _dbContext.Passengers.Add(p2);
+
+                _dbContext.Media.AddRange(med1, med2, med3);
+
                 _dbContext.SaveChanges();
 
             }

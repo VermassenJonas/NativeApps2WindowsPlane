@@ -11,6 +11,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
         public int MediumId { get; set; }
         public string Type { get; set; }
         public string Title { get; set; }
+        public string FileLoc { get; set; }
         public List<String> Tags { get; set; }
     }
 }

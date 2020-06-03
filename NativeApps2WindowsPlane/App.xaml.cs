@@ -42,6 +42,7 @@ namespace NativeApps2WindowsPlane
             container.Register<MessageVM>();
             container.Register<ProductVM>();
             container.Register<OrderVM>();
+            container.Register<MediaVM>();
             container.Verify();
         }
 

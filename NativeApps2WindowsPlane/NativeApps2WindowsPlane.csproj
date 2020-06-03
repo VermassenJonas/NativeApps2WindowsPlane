@@ -122,6 +122,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Domain\Medium.cs" />
     <Compile Include="Models\Domain\Message.cs" />
     <Compile Include="Models\Domain\Order.cs" />
     <Compile Include="Models\Domain\OrderLine.cs" />
@@ -135,6 +136,9 @@
     </Compile>
     <Compile Include="Pages\LoginDialog.xaml.cs">
       <DependentUpon>LoginDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MediaOverview.xaml.cs">
+      <DependentUpon>MediaOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\OrderOverview.xaml.cs">
       <DependentUpon>OrderOverview.xaml</DependentUpon>
@@ -152,6 +156,7 @@
     <Compile Include="Services\PassengerIdentificationService.cs" />
     <Compile Include="Services\SelectedProductService.cs" />
     <Compile Include="Services\ShoppingCartService.cs" />
+    <Compile Include="ViewModels\MediaVM.cs" />
     <Compile Include="ViewModels\MessageVM.cs" />
     <Compile Include="ViewModels\OrderVM.cs" />
     <Compile Include="ViewModels\ProductVM.cs" />
@@ -186,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\LoginDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MediaOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
