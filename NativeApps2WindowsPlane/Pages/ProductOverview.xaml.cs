@@ -30,8 +30,8 @@ namespace NativeApps2WindowsPlane.Pages
         {
             Product selectedProduct = App.container.GetInstance<SelectedProductService>().getCurrentProduct();
             orderLine = new OrderLine()
-            {
-                LineId = App.container.GetInstance<ShoppingCartService>().getNewOrderLineId(),
+            { //TODO
+                LineId = "0",//App.container.GetInstance<ShoppingCartService>().getNewOrderLineId(),
                 Product = selectedProduct,
                 Amount = 1
             };

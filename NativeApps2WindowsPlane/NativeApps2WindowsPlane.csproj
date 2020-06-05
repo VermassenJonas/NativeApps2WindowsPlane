@@ -143,6 +143,9 @@
     <Compile Include="Pages\ProductOverview.xaml.cs">
       <DependentUpon>ProductOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Shop.xaml.cs">
+      <DependentUpon>Shop.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ShopOverview.xaml.cs">
       <DependentUpon>ShopOverview.xaml</DependentUpon>
     </Compile>
@@ -157,6 +160,7 @@
     <Compile Include="ViewModels\MessageVM.cs" />
     <Compile Include="ViewModels\OrderVM.cs" />
     <Compile Include="ViewModels\ProductVM.cs" />
+    <Compile Include="ViewModels\ShoppingCartVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -200,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ProductOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Shop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

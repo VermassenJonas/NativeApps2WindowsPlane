@@ -17,7 +17,6 @@ namespace NativeApps2WindowsPlane.Models.Domain
             {
                 return OrderLines.Sum(ol => ol.TotalPrice);
             }
-
         }
     }
 }

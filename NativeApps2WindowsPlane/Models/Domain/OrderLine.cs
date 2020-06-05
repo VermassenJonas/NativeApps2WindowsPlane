@@ -8,7 +8,7 @@ namespace NativeApps2WindowsPlane.Models.Domain
 {
     public class OrderLine
     {
-        public int LineId { get; set; }
+        public string LineId { get; set; }
         public Product Product { get; set; }
         public int Amount { get; set; }
         public decimal TotalPrice {

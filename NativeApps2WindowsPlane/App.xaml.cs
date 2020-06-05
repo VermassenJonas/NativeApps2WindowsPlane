@@ -39,6 +39,7 @@ namespace NativeApps2WindowsPlane
             container.Register<PassengerIdentificationService>(Lifestyle.Singleton);
             container.Register<SelectedProductService>(Lifestyle.Singleton);
             container.Register<ShoppingCartService>(Lifestyle.Singleton);
+            container.Register<ShoppingCartVM>(Lifestyle.Singleton);
             container.Register<MessageVM>();
             container.Register<ProductVM>();
             container.Register<OrderVM>();
