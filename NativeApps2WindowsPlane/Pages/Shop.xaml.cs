@@ -52,5 +52,9 @@ namespace NativeApps2WindowsPlane.Pages
                 ShoppingCartVM.RemoveProduct(product);
             }
         }
+        public async void CommitOrder(object sender, RoutedEventArgs rea)
+        {
+            ShoppingCartVM.CommitOrder();
+        }
     }
 }

@@ -17,7 +17,19 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Column="0"
+            Grid.Row="0"
+            Text="Products on offer"
+            FontSize="24"/>
+        <TextBlock
+            Grid.Column="1"
+            Grid.Row="0"
+            Text="Shopping cart"
+            FontSize="24"/>
+
         <controls:DataGrid 
             IsReadOnly="True"
             Grid.Column="0"
@@ -60,9 +72,33 @@
             Grid.Column="1"
             Grid.Row="1"
             ItemsSource="{Binding ShoppingCartVM.OrderLineList}"
-            AutoGenerateColumns="True">
-            
+            AutoGenerateColumns="False">
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn
+                    Header="Price" 
+                    Width="SizeToCells"
+                    Binding="{Binding Product.Name}" 
+                    FontSize="20"/>
+                <controls:DataGridTextColumn
+                    Header="Price" 
+                    Width="SizeToCells"
+                    Binding="{Binding Amount, Mode=TwoWay}" 
+                    FontSize="20"/>
+                <controls:DataGridTextColumn
+                    Header="Price" 
+                    Width="SizeToCells"
+                    Binding="{Binding TotalPrice}" 
+                    FontSize="20"/>
+            </controls:DataGrid.Columns>
         </controls:DataGrid>
+
+        <StackPanel Orientation="Horizontal" 
+            Grid.Column="1"
+            Grid.Row="2">
+            <TextBlock Text="Total Price: "></TextBlock>
+            <TextBlock Text="{Binding ShoppingCartVM.TotalPrice}"></TextBlock>
+            <Button  Click="CommitOrder">Commit Order</Button>
+        </StackPanel>
 
     </Grid>
 
