@@ -34,11 +34,37 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                     Seat = "A7",
                     TicketNumber = 123
                 };
+                Passenger p3 = new Passenger()
+                {
+                    FirstName = "Alicia",
+                    Name = "Morlachien",
+                    Seat = "B2",
+                    TicketNumber = 12
+                };
+                TravelGroup tg1 = new TravelGroup();
+                tg1.AddPassenger(p1);
+                tg1.AddPassenger(p2);
+                TravelGroup tg2 = new TravelGroup();
+                tg2.AddPassenger(p3);
+
                 Message m1 = new Message()
                 {
-                    Content = "test from backend",
-                    MessageId = 1,
+                    Content = "test from backend 1",
                     Sender = p1,
+                    Sent = DateTime.Now
+
+                };
+                Message m2 = new Message()
+                {
+                    Content = "test from backend 2",
+                    Sender = p2,
+                    Sent = DateTime.Now
+
+                };
+                Message m3 = new Message()
+                {
+                    Content = "test from backend 3",
+                    Sender = p3,
                     Sent = DateTime.Now
 
                 };
@@ -82,7 +108,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                 {
                     Title = "The Fellowship of the Ring",
                     FileLoc = "Hobbits.mp4",
-                    Tags = new List<string>(){"Fantasy", "Tolkien", "Adventure"},
+                    Tags = new List<string>() { "Fantasy", "Tolkien", "Adventure" },
                     Type = "movie"
                 };
                 Medium med2 = new Medium()
@@ -111,9 +137,10 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
 
 
                 _dbContext.Flights.Add(flight1);
-                _dbContext.Products.AddRange(a1, a2, a3, a4, a5, a6);                                       
-                _dbContext.Messages.Add(m1);
-                _dbContext.Passengers.AddRange(p1, p2);
+                _dbContext.TravelGroups.AddRange(tg1, tg2);
+                _dbContext.Products.AddRange(a1, a2, a3, a4, a5, a6);
+                _dbContext.Messages.AddRange(m1, m2, m3);
+                _dbContext.Passengers.AddRange(p1, p2, p3);
                 _dbContext.Media.AddRange(med1, med2, med3);
                 _dbContext.SaveChanges();
 

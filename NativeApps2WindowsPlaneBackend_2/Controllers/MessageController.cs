@@ -15,21 +15,28 @@ namespace NativeApps2WindowsPlaneBackend_2.Controllers
 
         private readonly MessageRepository _messageRepository;
         private readonly PassengerRepository _passengerRepository;
-        public MessageController(MessageRepository messageRepository, PassengerRepository passengerRepository)
+        private readonly TravelGroupRepository _travelGroupRepository;
+        public MessageController(MessageRepository messageRepository, PassengerRepository passengerRepository, TravelGroupRepository travelGroupRepository)
         {
             _messageRepository = messageRepository;
             _passengerRepository = passengerRepository;
+            _travelGroupRepository = travelGroupRepository;
         }
 
 
 
-        // GET api/message
         [HttpGet]
         public IEnumerable<Message> Get()
         {
            return _messageRepository.getAll();
         }
-        // POST api/message
+
+        [HttpGet("{pid}")]
+        public IEnumerable<Message> Get(int pid)
+        {
+            return _messageRepository.getForGroup(_travelGroupRepository.GetByPassengerId(pid));
+        }
+
         [HttpPost]
         public void Post([FromBody] Message message)
         {
@@ -37,5 +44,6 @@ namespace NativeApps2WindowsPlaneBackend_2.Controllers
             _messageRepository.Add(message);
             _messageRepository.SaveChanges();
         }
+
     }
 }

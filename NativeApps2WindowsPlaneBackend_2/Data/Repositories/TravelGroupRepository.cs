@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
 {
-    public interface MessageRepository
+    public interface TravelGroupRepository
     {
-        IEnumerable<Message> getAll();
-        IEnumerable<Message> getForGroup(TravelGroup tg);
-        void Add(Message message);
-        void Delete(Message message);
+        TravelGroup GetById(int tgid);
+        TravelGroup GetByPassengerId(int pid);
         void SaveChanges();
     }
 }

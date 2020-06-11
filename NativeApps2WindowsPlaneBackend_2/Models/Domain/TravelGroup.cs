@@ -10,5 +10,16 @@ namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
     {
         public int TravelGroupId { get; set; }
         public List<Passenger> Passengers { get; set; }
+        public TravelGroup()
+        {
+            Passengers = new List<Passenger>();
+        }
+
+
+        public void AddPassenger(Passenger passenger)
+        {
+            passenger.TravelGroup = this;
+            Passengers.Add(passenger);
+        }
     }
 }

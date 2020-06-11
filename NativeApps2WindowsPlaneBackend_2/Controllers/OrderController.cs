@@ -20,14 +20,12 @@ namespace NativeApps2WindowsPlaneBackend_2.Controllers
             _orderRepository = orderRepository;
         }
 
-        // POST api/order
         [HttpPost]
         public void Post([FromBody] Order order)
         {
             _orderRepository.Add(order);
             _orderRepository.SaveChanges();
         }
-        // GET api/values/5
         [HttpGet("{pid}")]
         public List<Order> Get(int pid)
         {

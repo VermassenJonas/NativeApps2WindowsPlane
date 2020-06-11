@@ -36,7 +36,7 @@ namespace NativeApps2WindowsPlane.ViewModels
 
             try //TODO: fetch auto
             {
-                var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/"));
+                var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/"+passengerIdentificationService.getCurrentUser().TicketNumber));
                 IEnumerable<Message> list = JsonConvert.DeserializeObject<List<Message>>(json);
                 foreach (Message message in list)
                 {

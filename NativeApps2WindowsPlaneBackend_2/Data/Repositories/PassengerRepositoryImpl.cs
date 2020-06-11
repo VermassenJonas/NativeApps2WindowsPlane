@@ -19,20 +19,6 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
             _passengers = dbContext.Passengers;
         }
 
-        public void Add(Passenger passenger)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Passenger passenger)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Passenger> getAll()
-        {
-            throw new NotImplementedException();
-        }
 
         public Passenger GetById(int id)
         {
@@ -41,12 +27,8 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
 
-        public void Update(Passenger passenger)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

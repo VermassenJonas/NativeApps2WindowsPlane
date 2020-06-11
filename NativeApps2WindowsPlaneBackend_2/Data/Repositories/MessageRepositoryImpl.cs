@@ -35,7 +35,10 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
             return _messages.Include(m => m.Sender).ToList();
         }
 
-        
+        public IEnumerable<Message> getForGroup(TravelGroup tg)
+        {
+            return _messages.Where(m => tg.Passengers.Contains(m.Sender));
+        }
 
         public void SaveChanges()
         {

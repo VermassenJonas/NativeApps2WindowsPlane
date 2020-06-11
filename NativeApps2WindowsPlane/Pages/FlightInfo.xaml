@@ -12,6 +12,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="60*"/>
             <RowDefinition Height="60*"/>
+            <RowDefinition Height="120*"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60*"></ColumnDefinition>
@@ -21,5 +23,6 @@
         <TextBlock FontSize="36"  Grid.Column="0"  Grid.Row="1">Origin: London Heathrow</TextBlock>
         <TextBlock FontSize="36"  Grid.Column="1"  Grid.Row="0">Departure: 15:00</TextBlock>
         <TextBlock FontSize="36"  Grid.Column="1"  Grid.Row="1">Estimated time of Arrival: 16:00</TextBlock>
+        
     </Grid>
 </Page>

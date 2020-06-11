@@ -159,6 +159,7 @@
     <Compile Include="Services\PassengerIdentificationService.cs" />
     <Compile Include="Services\SelectedProductService.cs" />
     <Compile Include="Services\ShoppingCartService.cs" />
+    <Compile Include="ViewModels\FlightInfoVM.cs" />
     <Compile Include="ViewModels\MediaVM.cs" />
     <Compile Include="ViewModels\MessageVM.cs" />
     <Compile Include="ViewModels\OrderVM.cs" />
