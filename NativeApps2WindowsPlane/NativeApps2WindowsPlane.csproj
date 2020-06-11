@@ -131,6 +131,9 @@
     <Compile Include="Pages\ChatRoom.xaml.cs">
       <DependentUpon>ChatRoom.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FlightInfo.xaml.cs">
+      <DependentUpon>FlightInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginDialog.xaml.cs">
       <DependentUpon>LoginDialog.xaml</DependentUpon>
     </Compile>
@@ -188,6 +191,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\ChatRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FlightInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

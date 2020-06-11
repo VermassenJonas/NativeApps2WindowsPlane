@@ -99,20 +99,22 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                     Tags = new List<string>() { "Techno" },
                     Type = "song"
                 };
-                _dbContext.Products.Add(a1);
-                _dbContext.Products.Add(a2);
-                _dbContext.Products.Add(a3);
-                _dbContext.Products.Add(a4);
-                _dbContext.Products.Add(a5);
-                _dbContext.Products.Add(a6);
-                                       
+                Flight flight1 = new Flight()
+                {
+                    ETA = DateTime.Now,
+                    Departed = DateTime.Now,
+                    Origin = "London",
+                    Destination = "Brussels"
+                };
+
+
+
+
+                _dbContext.Flights.Add(flight1);
+                _dbContext.Products.AddRange(a1, a2, a3, a4, a5, a6);                                       
                 _dbContext.Messages.Add(m1);
-
-                _dbContext.Passengers.Add(p1);
-                _dbContext.Passengers.Add(p2);
-
+                _dbContext.Passengers.AddRange(p1, p2);
                 _dbContext.Media.AddRange(med1, med2, med3);
-
                 _dbContext.SaveChanges();
 
             }

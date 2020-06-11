@@ -18,6 +18,8 @@ namespace NativeApps2WindowsPlane.ViewModels
 
         private readonly PassengerIdentificationService passengerIdentificationService;
 
+
+
         public MessageVM(PassengerIdentificationService passengerIdentificationService)
         {
 

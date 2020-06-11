@@ -35,7 +35,7 @@ namespace NativeApps2WindowsPlane
             switch (x.Tag)
             {
                 case "flightinfo":
-                    //mainFrame.Navigate(typeof(Pages.FlightInfo));
+                    mainFrame.Navigate(typeof(Pages.FlightInfo));
                     break;
                 case "orderfood":
                     mainFrame.Navigate(typeof(Pages.Shop));
@@ -48,9 +48,6 @@ namespace NativeApps2WindowsPlane
                     break;
                 case "movies":
                     mainFrame.Navigate(typeof(Pages.MediaOverview));
-                    break;
-                case "shoppingcart":
-                    mainFrame.Navigate(typeof(Pages.ShoppingCart));
                     break;
             }
         }
