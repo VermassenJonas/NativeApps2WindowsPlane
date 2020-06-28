@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
+namespace NativeApps2WindowsPlane.Models.Domain
 {
     public class Steward
     {
         public string PersonnelNumber { get; set; }
         public String FirstName { get; set; }
         public String Name { get; set; }
-        public String Password { get; set; }
-        public String Hash { get; set; }
     }
 }

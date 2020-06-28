@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,11 +21,14 @@ namespace NativeApps2WindowsPlaneBackend_2.Controllers
             _flightRepository = flightRepository; 
         }
 
-        // GET api/media
+        // GET api/flight
         [HttpGet]
-        public Flight Get()
+        public Flight  Get()
         {
-            return _flightRepository.GetOne();
+            Flight flight = _flightRepository.GetOne();
+
+            
+            return flight;
         }
     }
 }

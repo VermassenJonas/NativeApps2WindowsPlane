@@ -19,10 +19,11 @@
             <ColumnDefinition Width="60*"></ColumnDefinition>
             <ColumnDefinition Width="60*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock FontSize="36"  Grid.Column="0"  Grid.Row="0">Destination: Brussels</TextBlock>
-        <TextBlock FontSize="36"  Grid.Column="0"  Grid.Row="1">Origin: London Heathrow</TextBlock>
-        <TextBlock FontSize="36"  Grid.Column="1"  Grid.Row="0">Departure: 15:00</TextBlock>
-        <TextBlock FontSize="36"  Grid.Column="1"  Grid.Row="1">Estimated time of Arrival: 16:00</TextBlock>
+        <TextBlock FontSize="36"  Grid.Column="0"  Grid.Row="0" Text="{Binding flight.Destination}"></TextBlock>
+        <TextBlock FontSize="36"  Grid.Column="0"  Grid.Row="1" Text="{Binding flight.Origin}"></TextBlock>
+        <TextBlock FontSize="36"  Grid.Column="1"  Grid.Row="0" Text="{Binding flight.Departed}"></TextBlock>
+        <TextBlock FontSize="36"  Grid.Column="1"  Grid.Row="1" Text="{Binding flight.ETA}"></TextBlock>
+        <TextBlock FontSize="36"  Grid.Column="0"  Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding weather.description}"></TextBlock>
         
     </Grid>
 </Page>

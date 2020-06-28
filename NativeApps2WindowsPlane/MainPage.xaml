@@ -15,26 +15,46 @@
         SelectionChanged="NavView_SelectionChanged">
         <NavigationView.MenuItems>
             <NavigationViewItem
+                Content="Log In"
+                Icon="World"
+                Tag="login" />
+            <NavigationViewItem
+                Visibility="{Binding PassengerItemVisibility}"
                 Content="Flight info"
                 Icon="World"
                 Tag="flightinfo" />
-            <NavigationViewItem Content="Shop" Tag="orderfood">
+            <NavigationViewItem 
+                
+                Visibility="{Binding PassengerItemVisibility}"
+                Content="Shop"
+                Tag="orderfood">
                 <NavigationViewItem.Icon>
                     <FontIcon Glyph="&#xED56;" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            
-            <NavigationViewItem Content="My orders" Tag="myorders">
+
+            <NavigationViewItem
+                Visibility="{Binding PassengerItemVisibility}"
+                Content="My orders"
+                Tag="myorders" >
                 <NavigationViewItem.Icon>
                     <FontIcon Glyph="&#xF0E3;" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Chatroom" Tag="chatroom">
+
+            <NavigationViewItem
+                Visibility="{Binding PassengerItemVisibility}"
+                Content="Chatroom"
+                Tag="chatroom">
                 <NavigationViewItem.Icon>
                     <FontIcon Glyph="&#xE8F2;" />
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
-            <NavigationViewItem Content="Music and Movies" Tag="movies">
+
+            <NavigationViewItem 
+                Visibility="{Binding PassengerItemVisibility}"
+                Content="Music and Movies"
+                Tag="movies">
                 <NavigationViewItem.Icon>
                     <FontIcon Glyph="&#xEA69;" />
                 </NavigationViewItem.Icon>

@@ -43,7 +43,11 @@ namespace NativeApps2WindowsPlane.Pages
             }
            
         }
+        private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        {
+            new StewardLoginDialog().ShowAsync();
+        }
 
-        
+
     }
 }

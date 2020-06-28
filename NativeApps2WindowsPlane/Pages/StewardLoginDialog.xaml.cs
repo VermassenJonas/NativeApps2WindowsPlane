@@ -1,5 +1,4 @@
-﻿using NativeApps2WindowsPlane.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,22 +13,23 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
+// The Content Dialog item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace NativeApps2WindowsPlane.Pages
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class FlightInfo : Page
+    public sealed partial class StewardLoginDialog : ContentDialog
     {
-
-        public FlightInfoVM flightInfoVM { get; set; }
-        public FlightInfo()
+        public StewardLoginDialog()
         {
-            flightInfoVM = App.container.GetInstance<FlightInfoVM>();
-            this.DataContext = flightInfoVM;
             this.InitializeComponent();
+        }
+
+        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        {
+        }
+
+        private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+        {
         }
     }
 }

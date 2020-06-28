@@ -1,4 +1,5 @@
 ﻿using NativeApps2WindowsPlane.Pages;
+using NativeApps2WindowsPlane.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,17 +24,23 @@ namespace NativeApps2WindowsPlane
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public AccessModeVM accessModeVM { get; set; }
+
         public MainPage()
         {
+            accessModeVM = App.container.GetInstance<AccessModeVM>();
+            this.DataContext = accessModeVM;
             this.InitializeComponent();
 
-            new LoginDialog().ShowAsync();
         }
         private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             NavigationViewItem x = (NavigationViewItem)args.SelectedItem;
             switch (x.Tag)
             {
+                case "login":
+                    mainFrame.Navigate(typeof(Pages.Login));
+                    break;
                 case "flightinfo":
                     mainFrame.Navigate(typeof(Pages.FlightInfo));
                     break;

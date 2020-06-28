@@ -37,13 +37,16 @@ namespace NativeApps2WindowsPlane
             this.Suspending += OnSuspending;
 
             container.Register<PassengerIdentificationService>(Lifestyle.Singleton);
+            container.Register<StewardIdentificationService>(Lifestyle.Singleton);
             container.Register<SelectedProductService>(Lifestyle.Singleton);
             container.Register<ShoppingCartService>(Lifestyle.Singleton);
             container.Register<ShoppingCartVM>(Lifestyle.Singleton);
+            container.Register<AccessModeVM>(Lifestyle.Singleton);
             container.Register<MessageVM>();
             container.Register<ProductVM>();
             container.Register<OrderVM>();
             container.Register<MediaVM>();
+            container.Register<FlightInfoVM>();
             container.Verify();
         }
 

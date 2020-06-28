@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="NativeApps2WindowsPlane.Pages.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NativeApps2WindowsPlane.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Visibility="{Binding PassengerVisibility}">
+            <TextBlock>Enter Ticket Number</TextBlock>
+            <TextBox x:Name="PassengerLoginInput" PlaceholderText="Ticket number goes here"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Click="SignInAsPassenger">Sign in</Button>
+                <Button Click="SwitchToCrew">Crew</Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Visibility="{Binding StewardVisibility}">
+            <TextBlock>Enter Crew Credentials</TextBlock>
+            <TextBox x:Name="CrewLoginInput" PlaceholderText="Personnel Id"/>
+            <TextBox x:Name="CrewPasswordInput" PlaceholderText="Password"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Click="SignInAsSteward">Sign in</Button>
+                <Button Click="SwitchToPassenger">Passenger</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
