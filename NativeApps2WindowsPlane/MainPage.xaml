@@ -19,10 +19,17 @@
                 Icon="World"
                 Tag="login" />
             <NavigationViewItem
+                Visibility="{Binding StewardItemVisibility}"
+                Content="Manage Seats"
+                Icon="World"
+                Tag="SeatManagement" />
+            
+            <NavigationViewItem
                 Visibility="{Binding PassengerItemVisibility}"
                 Content="Flight info"
                 Icon="World"
                 Tag="flightinfo" />
+            
             <NavigationViewItem 
                 
                 Visibility="{Binding PassengerItemVisibility}"

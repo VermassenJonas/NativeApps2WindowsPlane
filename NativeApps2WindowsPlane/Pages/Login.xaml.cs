@@ -102,7 +102,7 @@ namespace NativeApps2WindowsPlane.Pages
                     Password = CrewPasswordInput.Text
                 };
                 HttpResponseMessage hrm = await client.PostAsync(new Uri("http://localhost:51163/api/steward/"), new StringContent(JsonConvert.SerializeObject(loginDto), System.Text.Encoding.UTF8, "application/json"));
-                var json = hrm.Content.ToString();
+                var json = await hrm.Content.ReadAsStringAsync();
                 App.container.GetInstance<StewardIdentificationService>().SetCurrentUser(JsonConvert.DeserializeObject<Steward>(json));
                 AccessModeVM avm = App.container.GetInstance<AccessModeVM>();
                 avm.PassengerItemVisibility = Visibility.Collapsed;

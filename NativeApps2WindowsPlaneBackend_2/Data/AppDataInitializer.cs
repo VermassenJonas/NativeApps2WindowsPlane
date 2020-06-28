@@ -132,10 +132,16 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                     Origin = "London",
                     Destination = "Brussels"
                 };
+                Steward stew1 = new Steward()
+                {
+                    PersonnelNumber = "123",
+                    FirstName = "Aewen",
+                    Name = "Morlachien"
+                };
 
 
 
-
+                _dbContext.Stewards.Add(stew1);
                 _dbContext.Flights.Add(flight1);
                 _dbContext.TravelGroups.AddRange(tg1, tg2);
                 _dbContext.Products.AddRange(a1, a2, a3, a4, a5, a6);
