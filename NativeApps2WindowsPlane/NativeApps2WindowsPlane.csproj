@@ -129,6 +129,7 @@
     <Compile Include="Models\Domain\OrderLine.cs" />
     <Compile Include="Models\Domain\Passenger.cs" />
     <Compile Include="Models\Domain\Product.cs" />
+    <Compile Include="Models\Domain\Seat.cs" />
     <Compile Include="Models\Domain\Steward.cs" />
     <Compile Include="Models\Domain\Weather.cs" />
     <Compile Include="Models\dtos\LoginDto.cs" />
@@ -147,11 +148,17 @@
     <Compile Include="Pages\MediaOverview.xaml.cs">
       <DependentUpon>MediaOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\OrderManagement.xaml.cs">
+      <DependentUpon>OrderManagement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\OrderOverview.xaml.cs">
       <DependentUpon>OrderOverview.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductOverview.xaml.cs">
       <DependentUpon>ProductOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SeatManagement.xaml.cs">
+      <DependentUpon>SeatManagement.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shop.xaml.cs">
       <DependentUpon>Shop.xaml</DependentUpon>
@@ -176,6 +183,7 @@
     <Compile Include="ViewModels\MessageVM.cs" />
     <Compile Include="ViewModels\OrderVM.cs" />
     <Compile Include="ViewModels\ProductVM.cs" />
+    <Compile Include="ViewModels\SeatVM.cs" />
     <Compile Include="ViewModels\ShoppingCartVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -223,11 +231,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OrderManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\OrderOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ProductOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SeatManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

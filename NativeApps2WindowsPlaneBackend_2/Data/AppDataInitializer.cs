@@ -24,23 +24,38 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                 {
                     FirstName = "Jonas",
                     Name = "Vermassen",
-                    Seat = "A6",
                     TicketNumber = 1234
                 };
                 Passenger p2 = new Passenger()
                 {
                     FirstName = "Trifonius",
                     Name = "Valentino",
-                    Seat = "A7",
                     TicketNumber = 123
                 };
                 Passenger p3 = new Passenger()
                 {
                     FirstName = "Alicia",
                     Name = "Morlachien",
-                    Seat = "B2",
                     TicketNumber = 12
                 };
+
+                Seat s1 = new Seat()
+                {
+                    SeatId = "A6"
+                };
+                Seat s2 = new Seat()
+                {
+                    SeatId = "A7"
+                };
+                Seat s3 = new Seat()
+                {
+                    SeatId = "B2"
+                };
+                s1.placePassenger(p1);
+                s2.placePassenger(p2);
+                s3.placePassenger(p3);
+
+
                 TravelGroup tg1 = new TravelGroup();
                 tg1.AddPassenger(p1);
                 tg1.AddPassenger(p2);
@@ -139,7 +154,15 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
                     Name = "Morlachien"
                 };
 
-
+                flight1.Passengers.Add(p1);
+                flight1.Passengers.Add(p2);
+                flight1.Passengers.Add(p3);
+                flight1.Stewards.Add(stew1);
+                flight1.Seats.Add(s1);
+                flight1.Seats.Add(s2);
+                flight1.Seats.Add(s3);
+                flight1.TravelGroups.Add(tg1);
+                flight1.TravelGroups.Add(tg2);
 
                 _dbContext.Stewards.Add(stew1);
                 _dbContext.Flights.Add(flight1);

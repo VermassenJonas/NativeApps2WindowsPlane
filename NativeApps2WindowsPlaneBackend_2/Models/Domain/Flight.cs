@@ -16,5 +16,15 @@ namespace NativeApps2WindowsPlaneBackend_2.Models.Domain
         public List<Steward> Stewards { get; set; }
         public List<Order> Orders { get; set; }
         public List<TravelGroup> TravelGroups { get; set; }
+        public List<Seat> Seats { get; set; }
+
+        public Flight()
+        {
+            Passengers = new List<Passenger>();
+            Stewards = new List<Steward>();
+            Orders = new List<Order>();
+            TravelGroups = new List<TravelGroup>();
+            Seats = new List<Seat>();
+        }
     }
 }

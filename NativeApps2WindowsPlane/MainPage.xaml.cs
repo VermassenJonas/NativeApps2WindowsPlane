@@ -56,6 +56,12 @@ namespace NativeApps2WindowsPlane
                 case "movies":
                     mainFrame.Navigate(typeof(Pages.MediaOverview));
                     break;
+                case "SeatManagement":
+                    mainFrame.Navigate(typeof(Pages.SeatManagement));
+                    break;
+                case "OrderManagement":
+                    mainFrame.Navigate(typeof(Pages.OrderManagement));
+                    break;
             }
         }
     }

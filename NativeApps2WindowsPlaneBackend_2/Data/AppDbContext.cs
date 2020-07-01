@@ -20,6 +20,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
         public DbSet<Passenger>     Passengers { get; set; }
         public DbSet<Steward>       Stewards { get; set; }
         public DbSet<TravelGroup>   TravelGroups { get; set; }
+        public DbSet<Seat>          Seats { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
@@ -41,6 +42,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data
             modelBuilder.ApplyConfiguration(new PassengerConfig());
             modelBuilder.ApplyConfiguration(new StewardConfig());
             modelBuilder.ApplyConfiguration(new TravelGroupConfig());
+            modelBuilder.ApplyConfiguration(new SeatConfig());
 
         }
     }

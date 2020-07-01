@@ -14,7 +14,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.DbConfig
         {
             builder.ToTable("Passenger");
             builder.HasKey(p => p.TicketNumber);
-            builder.HasOne(p => p.TravelGroup).WithMany(tg => tg.Passengers); 
+            builder.HasOne(p => p.TravelGroup).WithMany(tg => tg.Passengers);
         }
     }
 }

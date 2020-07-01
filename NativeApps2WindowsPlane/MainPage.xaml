@@ -23,6 +23,11 @@
                 Content="Manage Seats"
                 Icon="World"
                 Tag="SeatManagement" />
+            <NavigationViewItem
+                Visibility="{Binding StewardItemVisibility}"
+                Content="Manage Orders"
+                Icon="World"
+                Tag="OrderManagement" />
             
             <NavigationViewItem
                 Visibility="{Binding PassengerItemVisibility}"
