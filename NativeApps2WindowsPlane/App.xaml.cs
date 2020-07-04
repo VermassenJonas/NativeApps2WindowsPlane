@@ -46,6 +46,7 @@ namespace NativeApps2WindowsPlane
             container.Register<SeatVM>();
             container.Register<ProductVM>();
             container.Register<OrderVM>();
+            container.Register<OrderManagementVM>();
             container.Register<MediaVM>();
             container.Register<FlightInfoVM>();
             container.Verify();

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace NativeApps2WindowsPlaneBackend_2.Data.DbConfig
 {
@@ -14,6 +15,7 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.DbConfig
         {
             builder.ToTable("Order");
             builder.HasOne(o => o.Passenger).WithMany(p => p.Orders);
+            builder.Property(b => b.IsProcessed).HasConversion(new BoolToZeroOneConverter<Int16>());
         }
     }
 }

@@ -22,9 +22,9 @@
                         <controls:DataGrid 
                             x:Name="DataGrid_products"
                             ItemsSource="{Binding OrderLines}"
+                            IsReadOnly="True"
                             AutoGenerateColumns="False">
                             <controls:DataGrid.Columns>
-
                                 <controls:DataGridTextColumn 
                                     Header="Product" 
                                     Width="SizeToCells"
@@ -45,8 +45,6 @@
                                     Width="SizeToHeader"
                                     Binding="{Binding TotalPrice}" 
                                     FontSize="20" />
-
-
                             </controls:DataGrid.Columns>
                         </controls:DataGrid>
                     </controls:Expander>

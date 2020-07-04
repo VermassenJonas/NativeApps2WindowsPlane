@@ -34,8 +34,6 @@
                     Width="SizeToHeader"
                     Binding="{Binding Type}" 
                     FontSize="20" />
-            
-
         </controls:DataGrid.Columns>
     </controls:DataGrid>
 </Page>

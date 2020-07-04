@@ -31,6 +31,16 @@ namespace NativeApps2WindowsPlaneBackend_2.Controllers
         {
             return _orderRepository.getByPassengerId(pid);
         }
-
+        [HttpGet]
+        public List<Order> GetAll()
+        {
+            return _orderRepository.getAll();
+        }
+        [HttpPut]
+        public void UpdateOrder([FromBody] Order order)
+        {
+            _orderRepository.Update(order);
+            _orderRepository.SaveChanges();
+        }
     }
 }

@@ -28,6 +28,11 @@
                 Content="Manage Orders"
                 Icon="World"
                 Tag="OrderManagement" />
+            <NavigationViewItem
+                Visibility="{Binding StewardItemVisibility}"
+                Content="Manage Notifications"
+                Icon="World"
+                Tag="NotificationManagement" />
             
             <NavigationViewItem
                 Visibility="{Binding PassengerItemVisibility}"

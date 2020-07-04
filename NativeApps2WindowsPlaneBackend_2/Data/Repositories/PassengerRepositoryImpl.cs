@@ -19,6 +19,10 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
             _passengers = dbContext.Passengers;
         }
 
+        public List<Passenger> GetAll()
+        {
+            return _passengers.ToList();
+        }
 
         public Passenger GetById(int id)
         {

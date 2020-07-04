@@ -62,6 +62,9 @@ namespace NativeApps2WindowsPlane
                 case "OrderManagement":
                     mainFrame.Navigate(typeof(Pages.OrderManagement));
                     break;
+                case "NotificationManagement":
+                    mainFrame.Navigate(typeof(Pages.NotificationManagement));
+                    break;
             }
         }
     }

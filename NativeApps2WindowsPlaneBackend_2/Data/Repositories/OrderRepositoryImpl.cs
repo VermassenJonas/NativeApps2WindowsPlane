@@ -25,6 +25,11 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
             _orders.Add(order);
         }
 
+        public List<Order> getAll()
+        {
+            return _orders.Include(o => o.Passenger).Include(o => o.OrderLines).ThenInclude(ol => ol.Product).ToList();
+        }
+
         public List<Order> getByPassengerId(int pid)
         {
             return _orders.Include(o => o.OrderLines).ThenInclude(ol => ol.Product).Where(o => o.Passenger.TicketNumber == pid).ToList();
@@ -33,6 +38,14 @@ namespace NativeApps2WindowsPlaneBackend_2.Data.Repositories
         public void SaveChanges()
         {
             _context.SaveChanges();
+        }
+
+        public void Update(Order order)
+        {
+            _context.Passengers.Attach(order.Passenger);
+            foreach (OrderLine ol in order.OrderLines)
+                _context.Products.Attach(ol.Product);
+            _orders.Update(order);
         }
     }
 }

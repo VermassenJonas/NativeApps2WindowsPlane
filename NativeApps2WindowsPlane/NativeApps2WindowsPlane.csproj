@@ -148,6 +148,9 @@
     <Compile Include="Pages\MediaOverview.xaml.cs">
       <DependentUpon>MediaOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\NotificationManagement.xaml.cs">
+      <DependentUpon>NotificationManagement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\OrderManagement.xaml.cs">
       <DependentUpon>OrderManagement.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,7 @@
     <Compile Include="ViewModels\FlightInfoVM.cs" />
     <Compile Include="ViewModels\MediaVM.cs" />
     <Compile Include="ViewModels\MessageVM.cs" />
+    <Compile Include="ViewModels\OrderManagementVM.cs" />
     <Compile Include="ViewModels\OrderVM.cs" />
     <Compile Include="ViewModels\ProductVM.cs" />
     <Compile Include="ViewModels\SeatVM.cs" />
@@ -228,6 +232,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MediaOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NotificationManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

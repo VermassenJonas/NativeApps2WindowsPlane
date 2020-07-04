@@ -5,10 +5,77 @@
     xmlns:local="using:NativeApps2WindowsPlane.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <controls:DataGrid 
+        x:Name="DataGrid_products"
+        ItemsSource="{Binding OrderList}"
+        AutoGenerateColumns="False"
+        RowDetailsVisibilityMode="VisibleWhenSelected">
 
-    </Grid>
+        <controls:DataGrid.RowDetailsTemplate>
+            <DataTemplate>
+                <controls:DataGrid 
+                            x:Name="DataGrid_products"
+                            ItemsSource="{Binding OrderLines}"
+                            IsReadOnly="True"
+                            AutoGenerateColumns="False">
+                    <controls:DataGrid.Columns>
+
+                        <controls:DataGridTextColumn 
+                                    Header="Product" 
+                                    Width="SizeToCells"
+                                    Binding="{Binding Product.Name}" 
+                                    FontSize="20" />
+                        <controls:DataGridTextColumn
+                                    Header="Amount" 
+                                    Width="SizeToHeader"
+                                    Binding="{Binding Amount}" 
+                                    FontSize="20" />
+                        <controls:DataGridTextColumn 
+                                    Header="Unit Price (€)" 
+                                    Width="SizeToHeader"
+                                    Binding="{Binding Product.Price}" 
+                                    FontSize="20" />
+                        <controls:DataGridTextColumn 
+                                    Header="Total Price (€)" 
+                                    Width="SizeToHeader"
+                                    Binding="{Binding TotalPrice}" 
+                                    FontSize="20" />
+                    </controls:DataGrid.Columns>
+                </controls:DataGrid>
+            </DataTemplate>
+        </controls:DataGrid.RowDetailsTemplate>
+        <controls:DataGrid.Columns>
+            <controls:DataGridTextColumn 
+                    Header="Passenger" 
+                    Width="SizeToCells"
+                    Binding="{Binding Passenger.FullName}" 
+                    FontSize="20" />
+            <controls:DataGridTextColumn
+                    Header="Price" 
+                    Width="SizeToHeader"
+                    Binding="{Binding TotalPrice}" 
+                    FontSize="20" />
+            <controls:DataGridTemplateColumn
+                    Width="SizeToCells"
+                    Header="">
+                <controls:DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Tag="{Binding OrderId}" Click="ToggleOrderProcessed" Visibility="{Binding GetNotProcessed}">
+                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE739;"/>
+                            </Button>
+                            <Button Tag="{Binding OrderId}" Click="ToggleOrderProcessed" Visibility="{Binding GetProcessed}">
+                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE73A;"/>
+                            </Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </controls:DataGridTemplateColumn.CellTemplate>
+
+            </controls:DataGridTemplateColumn>
+        </controls:DataGrid.Columns>
+    </controls:DataGrid>
 </Page>
