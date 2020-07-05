@@ -33,20 +33,25 @@ namespace NativeApps2WindowsPlane.ViewModels
         {
 
             HttpClient client = new HttpClient();
+            do
+            {
 
-            try //TODO: fetch auto
-            {
-                var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/"+passengerIdentificationService.getCurrentUser().TicketNumber));
-                IEnumerable<Message> list = JsonConvert.DeserializeObject<List<Message>>(json);
-                foreach (Message message in list)
+                try //TODO: fetch auto
                 {
-                    MessageList.Add(message);
+                    var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/message/" + passengerIdentificationService.getCurrentUser().TicketNumber));
+                    IEnumerable<Message> list = JsonConvert.DeserializeObject<List<Message>>(json);
+                    MessageList.Clear();
+                    foreach (Message message in list)
+                    {
+                        MessageList.Add(message);
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                await Task.Delay(TimeSpan.FromSeconds(5));//Quick & Dirty maar we krijgen push notes niet in gang
+            } while (true);
         }
 
         public async void AddMessage(string content)

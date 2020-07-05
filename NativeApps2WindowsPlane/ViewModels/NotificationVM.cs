@@ -21,7 +21,6 @@ namespace NativeApps2WindowsPlane.ViewModels
         {
             this.passengerIdentificationService = App.container.GetInstance<PassengerIdentificationService>();
             this.NotificationList = new ObservableCollection<Notification>();
-            //var t = new Timer(o => loadDataAsync(), null, 0, 30000);//Quick & Dirty maar we krijgen push notes niet in gang
             loadDataAsync();
         }
         private void fillObservableList(IEnumerable<Notification> notifications)
@@ -35,7 +34,9 @@ namespace NativeApps2WindowsPlane.ViewModels
         private async void loadDataAsync()
         {
             HttpClient client = new HttpClient();
-            
+            do
+            {
+
                 try
                 {
                     var json = await client.GetStringAsync(new Uri("http://localhost:51163/api/notification/" + passengerIdentificationService.getCurrentUser().TicketNumber));
@@ -46,6 +47,8 @@ namespace NativeApps2WindowsPlane.ViewModels
                 {
                     Console.WriteLine(e.Message);
                 }
+                await Task.Delay(TimeSpan.FromSeconds(20));//Quick & Dirty maar we krijgen push notes niet in gang
+            } while (true);
 
 
         }
