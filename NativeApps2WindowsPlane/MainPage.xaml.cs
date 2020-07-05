@@ -65,6 +65,9 @@ namespace NativeApps2WindowsPlane
                 case "NotificationManagement":
                     mainFrame.Navigate(typeof(Pages.NotificationManagement));
                     break;
+                case "Notifications":
+                    mainFrame.Navigate(typeof(Pages.NotificationView));
+                    break;
             }
         }
     }

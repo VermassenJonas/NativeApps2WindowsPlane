@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NativeApps2WindowsPlane.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,8 +23,11 @@ namespace NativeApps2WindowsPlane.Pages
     /// </summary>
     public sealed partial class NotificationView : Page
     {
+        public NotificationVM NotificationVM { get; set; }
         public NotificationView()
         {
+            NotificationVM = App.container.GetInstance<NotificationVM>();
+            this.DataContext = NotificationVM;
             this.InitializeComponent();
         }
     }
