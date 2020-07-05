@@ -21,6 +21,11 @@ namespace NativeApps2WindowsPlaneBackend_2.Controllers
         }
 
         
+        [HttpGet]
+        public List<Passenger> GetAll()
+        {
+            return _passengerRepository.GetAll();
+        }
         
 
         // GET: api/Passenger/5

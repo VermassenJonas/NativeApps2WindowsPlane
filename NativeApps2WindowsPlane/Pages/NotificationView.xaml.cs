@@ -1,6 +1,4 @@
-﻿using NativeApps2WindowsPlane.Models.Domain;
-using NativeApps2WindowsPlane.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,28 +20,11 @@ namespace NativeApps2WindowsPlane.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class SeatManagement : Page
+    public sealed partial class NotificationView : Page
     {
-        public SeatVM Seats { get; set; }
-        public SeatManagement()
+        public NotificationView()
         {
-            Seats = App.container.GetInstance<SeatVM>();
-            this.DataContext = Seats;
             this.InitializeComponent();
         }
-
-        public void swapTwoSeats()
-        {
-            List<Seat> selectedSeats = new List<Seat>();
-            foreach (Object o in SeatListView.SelectedItems)
-            {
-                selectedSeats.Add((Seat)o);
-            }
-            if (selectedSeats.Count() == 2)
-            {
-                Seats.swapSeatsAsync(selectedSeats);
-            }
-        }
-        
     }
 }

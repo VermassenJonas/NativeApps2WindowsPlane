@@ -125,6 +125,7 @@
     <Compile Include="Models\Domain\Flight.cs" />
     <Compile Include="Models\Domain\Medium.cs" />
     <Compile Include="Models\Domain\Message.cs" />
+    <Compile Include="Models\Domain\Notification.cs" />
     <Compile Include="Models\Domain\Order.cs" />
     <Compile Include="Models\Domain\OrderLine.cs" />
     <Compile Include="Models\Domain\Passenger.cs" />
@@ -150,6 +151,9 @@
     </Compile>
     <Compile Include="Pages\NotificationManagement.xaml.cs">
       <DependentUpon>NotificationManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NotificationView.xaml.cs">
+      <DependentUpon>NotificationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\OrderManagement.xaml.cs">
       <DependentUpon>OrderManagement.xaml</DependentUpon>
@@ -236,6 +240,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\NotificationManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NotificationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
